@@ -4,53 +4,65 @@
 <meta charset="UTF-8">
 <title>Pearson Proctor Quick Reference Guide</title>
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap');
 
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: 'Open Sans', sans-serif;
-        background: #f0f0f0; /* Light gray background for screen viewing */
-        color: #333;
-        -webkit-print-color-adjust: exact;
+    :root {
+        --brand-main: #0d004c;
+        --brand-accent1: #512eab;
+        --brand-warning: #ffce04;
+        --brand-cyan: #22c7c6;
+        --text-dark: #333;
+        --bg-gray: #f0f0f0;
     }
 
-    /* CARD CONTAINER */
+    body {
+        margin: 20px;
+        padding: 0;
+        font-family: 'Open Sans', sans-serif;
+        background: var(--bg-gray);
+        color: var(--text-dark);
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        display: flex;
+        justify-content: center;
+    }
+
+    /* CARD CONTAINER - Compact Height */
     .page-container {
         width: 8.5in;
-        height: 11in;
+        height: auto; /* Fits content perfectly */
         background: white;
-        margin: 20px auto;
         padding: 0.5in;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        box-shadow: 0 0 15px rgba(13, 0, 76, 0.15);
+        box-sizing: border-box;
+        border-radius: 8px;
+        overflow: hidden;
     }
 
     /* HEADER */
     header {
-        background-color: #0077C8; /* Pearson Blue */
+        background-color: var(--brand-main);
         color: white;
         padding: 15px 25px;
-        border-radius: 8px 8px 0 0;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        border-bottom: 4px solid #005a70;
+        border-bottom: 4px solid var(--brand-accent1);
     }
 
     header h1 {
         margin: 0;
-        font-size: 24px;
+        font-size: 22px;
         text-transform: uppercase;
         letter-spacing: 1px;
+        font-weight: 800;
     }
 
     header .sub {
-        font-size: 12px;
+        font-size: 11px;
         font-weight: 600;
-        opacity: 0.9;
+        opacity: 0.8;
+        letter-spacing: 0.5px;
     }
 
     /* GRID LAYOUT */
@@ -59,36 +71,37 @@
         grid-template-columns: 1fr 1fr;
         gap: 20px;
         padding: 20px;
-        border: 2px solid #0077C8;
+        border: 2px solid var(--brand-main);
         border-top: none;
-        flex-grow: 1;
     }
 
     .column {
         display: flex;
         flex-direction: column;
-        gap: 15px;
+        gap: 12px;
     }
 
     /* POLICY ITEM STYLES */
     .policy-item {
-        border-bottom: 1px solid #eee;
-        padding-bottom: 10px;
+        border-bottom: 1px dotted #ccc;
+        padding-bottom: 8px;
     }
 
     .policy-item:last-child {
         border-bottom: none;
+        padding-bottom: 0;
     }
 
     .policy-title {
         font-weight: 700;
-        color: #0077C8;
-        font-size: 14px;
-        margin-bottom: 4px;
+        color: var(--brand-main);
+        font-size: 13px;
+        margin-bottom: 3px;
         display: flex;
         align-items: center;
     }
 
+    /* Standard Icon Badge (Cyan) */
     .icon-badge {
         display: inline-block;
         width: 20px;
@@ -96,50 +109,81 @@
         line-height: 20px;
         text-align: center;
         border-radius: 50%;
-        background: #eee;
-        color: #555;
-        font-size: 12px;
+        background: var(--brand-cyan);
+        color: white;
+        font-size: 11px;
         margin-right: 8px;
+        font-weight: 800;
     }
 
+    /* Critical Icon Badge (Yellow with Dark text for contrast) */
     .policy-item.critical .icon-badge {
-        background: #D0006F; /* Pearson Raspberry */
-        color: white;
+        background: var(--brand-warning);
+        color: var(--brand-main); 
     }
 
     .policy-text {
-        font-size: 12px;
-        line-height: 1.4;
+        font-size: 11px;
+        line-height: 1.35;
         color: #444;
+        padding-left: 28px; /* Indent text to align under title */
+    }
+    
+    .policy-text strong {
+        color: var(--brand-main);
+        font-weight: 800;
     }
 
     /* EMERGENCY SECTION */
     .emergency-box {
         grid-column: 1 / -1; /* Span both columns */
-        background-color: #fff0f5;
-        border: 2px dashed #D0006F;
+        background-color: #fffbe6; /* Very pale yellow */
+        border: 2px solid var(--brand-warning);
         padding: 15px;
         border-radius: 6px;
         margin-top: 10px;
     }
 
     .emergency-title {
-        color: #D0006F;
+        color: var(--brand-main);
         font-weight: 800;
         text-transform: uppercase;
-        font-size: 14px;
-        margin-bottom: 5px;
+        font-size: 13px;
+        margin-bottom: 6px;
+        display: flex;
+        align-items: center;
+    }
+
+    .emergency-title .icon-badge {
+        background: var(--brand-warning);
+        color: var(--brand-main);
+    }
+    
+    .footer-text {
+        text-align: center; 
+        font-size: 10px; 
+        color: #999; 
+        margin-top: 20px;
     }
 
     /* PRINT MODIFICATIONS */
     @media print {
-        body { background: none; }
+        body { 
+            background: none; 
+            margin: 0; 
+            display: block;
+            padding: 20px;
+        }
         .page-container {
-            margin: 0;
+            margin: 0 auto;
             box-shadow: none;
             width: 100%;
-            height: 100%;
+            max-width: 8in;
+            height: auto;
+            padding: 0;
+            border-radius: 0;
         }
+        header { border-radius: 0; }
     }
 </style>
 </head>
@@ -151,9 +195,9 @@
             <h1>Proctor Quick Reference</h1>
             <div class="sub">Standard Operating Procedures & Policy Guide</div>
         </div>
-        <div style="text-align:right; font-size:12px;">
-            <div>PEARSON</div>
-            <div>VUE</div>
+        <div style="text-align:right; color: var(--brand-cyan);">
+            <div style="font-weight:800; font-size: 16px; letter-spacing: 1px;">PEARSON</div>
+            <div style="font-size: 11px; font-weight: 600; color: white;">VUE</div>
         </div>
     </header>
 
@@ -163,35 +207,35 @@
             <div class="policy-item critical">
                 <div class="policy-title"><span class="icon-badge">!</span>1. ID Mismatch</div>
                 <div class="policy-text">
-                    <strong>Do not admit</strong> if name on ID does not strictly match registration. Escalate to site manager for secondary ID verification.
+                    <strong>Do not admit</strong> if name on ID does not strictly match registration (excluding minor allowed variations). Escalate to site manager for secondary ID verification.
                 </div>
             </div>
 
             <div class="policy-item critical">
                 <div class="policy-title"><span class="icon-badge">!</span>2. Mobile Devices</div>
                 <div class="policy-text">
-                    <strong>Zero Tolerance.</strong> If a device is seen or heard, terminate the exam immediately. File incident report: "Prohibited Item".
+                    <strong>Zero Tolerance.</strong> If a device is seen or heard (even if unused), terminate exam immediately. File incident report: "Prohibited Item".
                 </div>
             </div>
 
             <div class="policy-item">
                 <div class="policy-title"><span class="icon-badge">3</span>Muttering / Self-Talk</div>
                 <div class="policy-text">
-                    Issue <strong>soft warning</strong> first. Only revoke if clearly communicating with a third party. "Please remain silent."
+                    Issue <strong>soft warning</strong> first: "Please remain silent." Only revoke if clearly communicating with a third party.
                 </div>
             </div>
 
             <div class="policy-item critical">
                 <div class="policy-title"><span class="icon-badge">!</span>4. Suspicious Eyes</div>
                 <div class="policy-text">
-                    Recurring looks to lap/wall/wrists = <strong>Red Flag</strong>. Warn once. If it persists, pause exam and inspect the area.
+                    Recurring looks to lap/wall/wrists = <strong>Red Flag</strong>. Warn once. If it persists, pause exam and inspect the area for notes.
                 </div>
             </div>
 
             <div class="policy-item">
                 <div class="policy-title"><span class="icon-badge">5</span>Unscheduled Breaks</div>
                 <div class="policy-text">
-                    Exam timer <strong>continues running</strong>. Candidate cannot access locker/bag. Must do full check-in upon return.
+                    Exam timer <strong>continues running</strong>. Candidate cannot access locker/bag. Perform full check-in procedure upon return.
                 </div>
             </div>
 
@@ -202,21 +246,21 @@
             <div class="policy-item">
                 <div class="policy-title"><span class="icon-badge">6</span>Comfort Aids</div>
                 <div class="policy-text">
-                    Tissues/Sweaters allowed but <strong>must be inspected</strong>. If brought in mid-exam, pause session to inspect immediately.
+                    Tissues/Sweaters allowed but <strong>must be inspected</strong> beforehand. If brought in mid-exam, pause session to inspect immediately.
                 </div>
             </div>
 
             <div class="policy-item">
-                <div class="policy-title"><span class="icon-badge">7</span>Tech Freeze</div>
+                <div class="policy-title"><span class="icon-badge">7</span>Tech Freeze / Latency</div>
                 <div class="policy-text">
-                    Do not close exam. Attempt refresh/restart. If >10 mins, offer reschedule option and file case report.
+                    Do not close exam. Attempt refresh/restart. If interruption >10 mins, offer reschedule option and file case report.
                 </div>
             </div>
 
             <div class="policy-item critical">
                 <div class="policy-title"><span class="icon-badge">!</span>8. Note Taking</div>
                 <div class="policy-text">
-                    Use erasable board only. Writing on hands/tissues = <strong>Prohibited</strong>. Removing notes from room = <strong>Theft</strong>.
+                    Use provided erasable board only. Writing on hands/tissues = <strong>Prohibited</strong>. Removing notes from room = <strong>Theft</strong>.
                 </div>
             </div>
 
@@ -227,17 +271,17 @@
                 </div>
             </div>
 
-            <div class="emergency-box">
-                <div class="emergency-title">10. Emergency Protocols (Fire/Safety)</div>
-                <div class="policy-text">
-                    <strong>Safety First.</strong> Instruct candidates to leave ALL items (IDs, Keys) at desk. Evacuate immediately. Seal room if safe. File "Site Emergency" report later.
-                </div>
-            </div>
+        </div>
 
+        <div class="emergency-box">
+            <div class="emergency-title"><span class="icon-badge">10</span> Emergency Protocols (Fire/Safety)</div>
+            <div class="policy-text">
+                <strong>Candidate Safety First.</strong> Instruct candidates to leave ALL items (IDs, Keys) at desk. Evacuate immediately. Seal room if safe to do so. File "Site Emergency" report once safety is restored.
+            </div>
         </div>
     </div>
     
-    <div style="text-align: center; font-size: 11px; color: #999; padding-top:10px;">
+    <div class="footer-text">
         © Pearson VUE | Internal Use Only | Do Not Distribute to Candidates
     </div>
 </div>
