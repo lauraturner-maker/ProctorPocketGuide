@@ -1,290 +1,129 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Pearson Proctor Quick Reference Guide</title>
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap');
+<div style="font-family: 'Open Sans', Helvetica, Arial, sans-serif; background: #ffffff; color: #333; max-width: 800px; margin: 0 auto; box-sizing: border-box; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
 
-    :root {
-        --brand-main: #0d004c;
-        --brand-accent1: #512eab;
-        --brand-warning: #ffce04;
-        --brand-cyan: #22c7c6;
-        --text-dark: #333;
-        --bg-gray: #f0f0f0;
-    }
-
-    body {
-        margin: 20px;
-        padding: 0;
-        font-family: 'Open Sans', sans-serif;
-        background: var(--bg-gray);
-        color: var(--text-dark);
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-        display: flex;
-        justify-content: center;
-    }
-
-    /* CARD CONTAINER - Compact Height */
-    .page-container {
-        width: 8.5in;
-        height: auto; /* Fits content perfectly */
-        background: white;
-        padding: 0.5in;
-        box-shadow: 0 0 15px rgba(13, 0, 76, 0.15);
-        box-sizing: border-box;
-        border-radius: 8px;
-        overflow: hidden;
-    }
-
-    /* HEADER */
-    header {
-        background-color: var(--brand-main);
-        color: white;
-        padding: 15px 25px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 4px solid var(--brand-accent1);
-    }
-
-    header h1 {
-        margin: 0;
-        font-size: 22px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        font-weight: 800;
-    }
-
-    header .sub {
-        font-size: 11px;
-        font-weight: 600;
-        opacity: 0.8;
-        letter-spacing: 0.5px;
-    }
-
-    /* GRID LAYOUT */
-    .content-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-        padding: 20px;
-        border: 2px solid var(--brand-main);
-        border-top: none;
-    }
-
-    .column {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    /* POLICY ITEM STYLES */
-    .policy-item {
-        border-bottom: 1px dotted #ccc;
-        padding-bottom: 8px;
-    }
-
-    .policy-item:last-child {
-        border-bottom: none;
-        padding-bottom: 0;
-    }
-
-    .policy-title {
-        font-weight: 700;
-        color: var(--brand-main);
-        font-size: 13px;
-        margin-bottom: 3px;
-        display: flex;
-        align-items: center;
-    }
-
-    /* Standard Icon Badge (Cyan) */
-    .icon-badge {
-        display: inline-block;
-        width: 20px;
-        height: 20px;
-        line-height: 20px;
-        text-align: center;
-        border-radius: 50%;
-        background: var(--brand-cyan);
-        color: white;
-        font-size: 11px;
-        margin-right: 8px;
-        font-weight: 800;
-    }
-
-    /* Critical Icon Badge (Yellow with Dark text for contrast) */
-    .policy-item.critical .icon-badge {
-        background: var(--brand-warning);
-        color: var(--brand-main); 
-    }
-
-    .policy-text {
-        font-size: 11px;
-        line-height: 1.35;
-        color: #444;
-        padding-left: 28px; /* Indent text to align under title */
-    }
-    
-    .policy-text strong {
-        color: var(--brand-main);
-        font-weight: 800;
-    }
-
-    /* EMERGENCY SECTION */
-    .emergency-box {
-        grid-column: 1 / -1; /* Span both columns */
-        background-color: #fffbe6; /* Very pale yellow */
-        border: 2px solid var(--brand-warning);
-        padding: 15px;
-        border-radius: 6px;
-        margin-top: 10px;
-    }
-
-    .emergency-title {
-        color: var(--brand-main);
-        font-weight: 800;
-        text-transform: uppercase;
-        font-size: 13px;
-        margin-bottom: 6px;
-        display: flex;
-        align-items: center;
-    }
-
-    .emergency-title .icon-badge {
-        background: var(--brand-warning);
-        color: var(--brand-main);
-    }
-    
-    .footer-text {
-        text-align: center; 
-        font-size: 10px; 
-        color: #999; 
-        margin-top: 20px;
-    }
-
-    /* PRINT MODIFICATIONS */
-    @media print {
-        body { 
-            background: none; 
-            margin: 0; 
-            display: block;
-            padding: 20px;
-        }
-        .page-container {
-            margin: 0 auto;
-            box-shadow: none;
-            width: 100%;
-            max-width: 8in;
-            height: auto;
-            padding: 0;
-            border-radius: 0;
-        }
-        header { border-radius: 0; }
-    }
-</style>
-</head>
-<body>
-
-<div class="page-container">
-    <header>
+    <div style="background-color: #0d004c; color: white; padding: 15px 20px; border-bottom: 4px solid #512eab; display: flex; justify-content: space-between; align-items: center;">
         <div>
-            <h1>Proctor Quick Reference</h1>
-            <div class="sub">Standard Operating Procedures & Policy Guide</div>
+            <h1 style="margin: 0; font-size: 20px; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; color: white;">Proctor Quick Reference</h1>
+            <div style="font-size: 11px; font-weight: 600; opacity: 0.8; margin-top: 4px; color: #e0e0e0;">Standard Operating Procedures & Policy Guide</div>
         </div>
-        <div style="text-align:right; color: var(--brand-cyan);">
-            <div style="font-weight:800; font-size: 16px; letter-spacing: 1px;">PEARSON</div>
+        <div style="text-align:right;">
+            <div style="font-weight:800; font-size: 16px; letter-spacing: 1px; color: #22c7c6;">PEARSON</div>
             <div style="font-size: 11px; font-weight: 600; color: white;">VUE</div>
         </div>
-    </header>
+    </div>
 
-    <div class="content-grid">
-        <div class="column">
+    <div style="padding: 20px; display: flex; flex-wrap: wrap; gap: 20px;">
+        
+        <div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 15px;">
             
-            <div class="policy-item critical">
-                <div class="policy-title"><span class="icon-badge">!</span>1. ID Mismatch</div>
-                <div class="policy-text">
-                    <strong>Do not admit</strong> if name on ID does not strictly match registration (excluding minor allowed variations). Escalate to site manager for secondary ID verification.
+            <div style="border-bottom: 1px dotted #ccc; padding-bottom: 10px;">
+                <div style="font-weight: 700; color: #0d004c; font-size: 13px; margin-bottom: 4px; display: flex; align-items: center;">
+                    <span style="display: inline-block; width: 22px; height: 22px; line-height: 22px; text-align: center; border-radius: 50%; background-color: #ffce04; color: #0d004c; font-size: 12px; font-weight: 800; margin-right: 8px;">!</span>
+                    1. ID Mismatch
+                </div>
+                <div style="font-size: 11px; line-height: 1.4; color: #444; padding-left: 30px;">
+                    <strong style="color: #0d004c;">Do not admit</strong> if name on ID does not strictly match registration. Escalate to site manager for verification.
                 </div>
             </div>
 
-            <div class="policy-item critical">
-                <div class="policy-title"><span class="icon-badge">!</span>2. Mobile Devices</div>
-                <div class="policy-text">
-                    <strong>Zero Tolerance.</strong> If a device is seen or heard (even if unused), terminate exam immediately. File incident report: "Prohibited Item".
+            <div style="border-bottom: 1px dotted #ccc; padding-bottom: 10px;">
+                <div style="font-weight: 700; color: #0d004c; font-size: 13px; margin-bottom: 4px; display: flex; align-items: center;">
+                    <span style="display: inline-block; width: 22px; height: 22px; line-height: 22px; text-align: center; border-radius: 50%; background-color: #ffce04; color: #0d004c; font-size: 12px; font-weight: 800; margin-right: 8px;">!</span>
+                    2. Mobile Devices
+                </div>
+                <div style="font-size: 11px; line-height: 1.4; color: #444; padding-left: 30px;">
+                    <strong style="color: #0d004c;">Zero Tolerance.</strong> If a device is seen or heard, terminate exam immediately. File incident report.
                 </div>
             </div>
 
-            <div class="policy-item">
-                <div class="policy-title"><span class="icon-badge">3</span>Muttering / Self-Talk</div>
-                <div class="policy-text">
-                    Issue <strong>soft warning</strong> first: "Please remain silent." Only revoke if clearly communicating with a third party.
+            <div style="border-bottom: 1px dotted #ccc; padding-bottom: 10px;">
+                <div style="font-weight: 700; color: #0d004c; font-size: 13px; margin-bottom: 4px; display: flex; align-items: center;">
+                    <span style="display: inline-block; width: 22px; height: 22px; line-height: 22px; text-align: center; border-radius: 50%; background-color: #22c7c6; color: white; font-size: 12px; font-weight: 800; margin-right: 8px;">3</span>
+                    Muttering / Self-Talk
+                </div>
+                <div style="font-size: 11px; line-height: 1.4; color: #444; padding-left: 30px;">
+                    Issue <strong style="color: #0d004c;">soft warning</strong> first. Only revoke if clearly communicating with a third party.
                 </div>
             </div>
 
-            <div class="policy-item critical">
-                <div class="policy-title"><span class="icon-badge">!</span>4. Suspicious Eyes</div>
-                <div class="policy-text">
-                    Recurring looks to lap/wall/wrists = <strong>Red Flag</strong>. Warn once. If it persists, pause exam and inspect the area for notes.
+            <div style="border-bottom: 1px dotted #ccc; padding-bottom: 10px;">
+                <div style="font-weight: 700; color: #0d004c; font-size: 13px; margin-bottom: 4px; display: flex; align-items: center;">
+                    <span style="display: inline-block; width: 22px; height: 22px; line-height: 22px; text-align: center; border-radius: 50%; background-color: #ffce04; color: #0d004c; font-size: 12px; font-weight: 800; margin-right: 8px;">!</span>
+                    4. Suspicious Eyes
+                </div>
+                <div style="font-size: 11px; line-height: 1.4; color: #444; padding-left: 30px;">
+                    Recurring looks to lap/wall/wrists = <strong style="color: #0d004c;">Red Flag</strong>. Warn once, then inspect area.
                 </div>
             </div>
 
-            <div class="policy-item">
-                <div class="policy-title"><span class="icon-badge">5</span>Unscheduled Breaks</div>
-                <div class="policy-text">
-                    Exam timer <strong>continues running</strong>. Candidate cannot access locker/bag. Perform full check-in procedure upon return.
+             <div style="border-bottom: 0; padding-bottom: 0;">
+                <div style="font-weight: 700; color: #0d004c; font-size: 13px; margin-bottom: 4px; display: flex; align-items: center;">
+                    <span style="display: inline-block; width: 22px; height: 22px; line-height: 22px; text-align: center; border-radius: 50%; background-color: #22c7c6; color: white; font-size: 12px; font-weight: 800; margin-right: 8px;">5</span>
+                    Unscheduled Breaks
                 </div>
-            </div>
-
-        </div>
-
-        <div class="column">
-
-            <div class="policy-item">
-                <div class="policy-title"><span class="icon-badge">6</span>Comfort Aids</div>
-                <div class="policy-text">
-                    Tissues/Sweaters allowed but <strong>must be inspected</strong> beforehand. If brought in mid-exam, pause session to inspect immediately.
-                </div>
-            </div>
-
-            <div class="policy-item">
-                <div class="policy-title"><span class="icon-badge">7</span>Tech Freeze / Latency</div>
-                <div class="policy-text">
-                    Do not close exam. Attempt refresh/restart. If interruption >10 mins, offer reschedule option and file case report.
-                </div>
-            </div>
-
-            <div class="policy-item critical">
-                <div class="policy-title"><span class="icon-badge">!</span>8. Note Taking</div>
-                <div class="policy-text">
-                    Use provided erasable board only. Writing on hands/tissues = <strong>Prohibited</strong>. Removing notes from room = <strong>Theft</strong>.
-                </div>
-            </div>
-
-            <div class="policy-item critical">
-                <div class="policy-title"><span class="icon-badge">!</span>9. Disruptive Behavior</div>
-                <div class="policy-text">
-                    Shouting/Aggression overrides exam security. <strong>Dismiss immediately</strong>. Call security if safety is compromised.
+                <div style="font-size: 11px; line-height: 1.4; color: #444; padding-left: 30px;">
+                    Exam timer <strong style="color: #0d004c;">continues running</strong>. Full check-in required upon return.
                 </div>
             </div>
 
         </div>
 
-        <div class="emergency-box">
-            <div class="emergency-title"><span class="icon-badge">10</span> Emergency Protocols (Fire/Safety)</div>
-            <div class="policy-text">
-                <strong>Candidate Safety First.</strong> Instruct candidates to leave ALL items (IDs, Keys) at desk. Evacuate immediately. Seal room if safe to do so. File "Site Emergency" report once safety is restored.
+        <div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 15px;">
+            
+             <div style="border-bottom: 1px dotted #ccc; padding-bottom: 10px;">
+                <div style="font-weight: 700; color: #0d004c; font-size: 13px; margin-bottom: 4px; display: flex; align-items: center;">
+                    <span style="display: inline-block; width: 22px; height: 22px; line-height: 22px; text-align: center; border-radius: 50%; background-color: #22c7c6; color: white; font-size: 12px; font-weight: 800; margin-right: 8px;">6</span>
+                    Comfort Aids
+                </div>
+                <div style="font-size: 11px; line-height: 1.4; color: #444; padding-left: 30px;">
+                    Tissues/Sweaters allowed but <strong style="color: #0d004c;">must be inspected</strong> beforehand.
+                </div>
+            </div>
+
+            <div style="border-bottom: 1px dotted #ccc; padding-bottom: 10px;">
+                <div style="font-weight: 700; color: #0d004c; font-size: 13px; margin-bottom: 4px; display: flex; align-items: center;">
+                    <span style="display: inline-block; width: 22px; height: 22px; line-height: 22px; text-align: center; border-radius: 50%; background-color: #22c7c6; color: white; font-size: 12px; font-weight: 800; margin-right: 8px;">7</span>
+                    Tech Freeze / Latency
+                </div>
+                <div style="font-size: 11px; line-height: 1.4; color: #444; padding-left: 30px;">
+                    Do not close exam. Attempt refresh. If >10 mins, offer reschedule.
+                </div>
+            </div>
+
+            <div style="border-bottom: 1px dotted #ccc; padding-bottom: 10px;">
+                <div style="font-weight: 700; color: #0d004c; font-size: 13px; margin-bottom: 4px; display: flex; align-items: center;">
+                    <span style="display: inline-block; width: 22px; height: 22px; line-height: 22px; text-align: center; border-radius: 50%; background-color: #ffce04; color: #0d004c; font-size: 12px; font-weight: 800; margin-right: 8px;">!</span>
+                    8. Note Taking
+                </div>
+                <div style="font-size: 11px; line-height: 1.4; color: #444; padding-left: 30px;">
+                    Erasable board only. Writing on hands/tissues = <strong style="color: #0d004c;">Prohibited</strong>.
+                </div>
+            </div>
+
+            <div style="border-bottom: 0; padding-bottom: 0;">
+                <div style="font-weight: 700; color: #0d004c; font-size: 13px; margin-bottom: 4px; display: flex; align-items: center;">
+                    <span style="display: inline-block; width: 22px; height: 22px; line-height: 22px; text-align: center; border-radius: 50%; background-color: #ffce04; color: #0d004c; font-size: 12px; font-weight: 800; margin-right: 8px;">!</span>
+                    9. Disruptive Behavior
+                </div>
+                <div style="font-size: 11px; line-height: 1.4; color: #444; padding-left: 30px;">
+                    Aggression overrides exam security. <strong style="color: #0d004c;">Dismiss immediately</strong>. Call security.
+                </div>
+            </div>
+
+        </div>
+        
+        <div style="width: 100%; background-color: #fffdf2; border: 2px solid #ffce04; padding: 15px; border-radius: 6px; margin-top: 5px;">
+             <div style="font-weight: 800; color: #0d004c; text-transform: uppercase; font-size: 13px; margin-bottom: 6px; display: flex; align-items: center;">
+                <span style="display: inline-block; width: 22px; height: 22px; line-height: 22px; text-align: center; border-radius: 50%; background-color: #ffce04; color: #0d004c; font-size: 12px; font-weight: 800; margin-right: 8px;">10</span>
+                Emergency Protocols (Fire/Safety)
+            </div>
+            <div style="font-size: 11px; line-height: 1.35; color: #444; padding-left: 30px;">
+                <strong style="color: #0d004c;">Candidate Safety First.</strong> Instruct candidates to leave ALL items at desk. Evacuate immediately. Seal room if safe.
             </div>
         </div>
+
     </div>
     
-    <div class="footer-text">
-        © Pearson VUE | Internal Use Only | Do Not Distribute to Candidates
+    <div style="text-align: center; font-size: 10px; color: #999; padding-bottom: 15px; background: #fff;">
+        © Pearson VUE | Internal Use Only
     </div>
 </div>
-
-</body>
-</html>
