@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pearson Proctor Quick Reference Guide</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Open Sans', sans-serif;
+        background: #f0f0f0; /* Light gray background for screen viewing */
+        color: #333;
+        -webkit-print-color-adjust: exact;
+    }
+
+    /* CARD CONTAINER */
+    .page-container {
+        width: 8.5in;
+        height: 11in;
+        background: white;
+        margin: 20px auto;
+        padding: 0.5in;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    /* HEADER */
+    header {
+        background-color: #0077C8; /* Pearson Blue */
+        color: white;
+        padding: 15px 25px;
+        border-radius: 8px 8px 0 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 4px solid #005a70;
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 24px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    header .sub {
+        font-size: 12px;
+        font-weight: 600;
+        opacity: 0.9;
+    }
+
+    /* GRID LAYOUT */
+    .content-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        padding: 20px;
+        border: 2px solid #0077C8;
+        border-top: none;
+        flex-grow: 1;
+    }
+
+    .column {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* POLICY ITEM STYLES */
+    .policy-item {
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+    }
+
+    .policy-item:last-child {
+        border-bottom: none;
+    }
+
+    .policy-title {
+        font-weight: 700;
+        color: #0077C8;
+        font-size: 14px;
+        margin-bottom: 4px;
+        display: flex;
+        align-items: center;
+    }
+
+    .icon-badge {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        text-align: center;
+        border-radius: 50%;
+        background: #eee;
+        color: #555;
+        font-size: 12px;
+        margin-right: 8px;
+    }
+
+    .policy-item.critical .icon-badge {
+        background: #D0006F; /* Pearson Raspberry */
+        color: white;
+    }
+
+    .policy-text {
+        font-size: 12px;
+        line-height: 1.4;
+        color: #444;
+    }
+
+    /* EMERGENCY SECTION */
+    .emergency-box {
+        grid-column: 1 / -1; /* Span both columns */
+        background-color: #fff0f5;
+        border: 2px dashed #D0006F;
+        padding: 15px;
+        border-radius: 6px;
+        margin-top: 10px;
+    }
+
+    .emergency-title {
+        color: #D0006F;
+        font-weight: 800;
+        text-transform: uppercase;
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+
+    /* PRINT MODIFICATIONS */
+    @media print {
+        body { background: none; }
+        .page-container {
+            margin: 0;
+            box-shadow: none;
+            width: 100%;
+            height: 100%;
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="page-container">
+    <header>
+        <div>
+            <h1>Proctor Quick Reference</h1>
+            <div class="sub">Standard Operating Procedures & Policy Guide</div>
+        </div>
+        <div style="text-align:right; font-size:12px;">
+            <div>PEARSON</div>
+            <div>VUE</div>
+        </div>
+    </header>
+
+    <div class="content-grid">
+        <div class="column">
+            
+            <div class="policy-item critical">
+                <div class="policy-title"><span class="icon-badge">!</span>1. ID Mismatch</div>
+                <div class="policy-text">
+                    <strong>Do not admit</strong> if name on ID does not strictly match registration. Escalate to site manager for secondary ID verification.
+                </div>
+            </div>
+
+            <div class="policy-item critical">
+                <div class="policy-title"><span class="icon-badge">!</span>2. Mobile Devices</div>
+                <div class="policy-text">
+                    <strong>Zero Tolerance.</strong> If a device is seen or heard, terminate the exam immediately. File incident report: "Prohibited Item".
+                </div>
+            </div>
+
+            <div class="policy-item">
+                <div class="policy-title"><span class="icon-badge">3</span>Muttering / Self-Talk</div>
+                <div class="policy-text">
+                    Issue <strong>soft warning</strong> first. Only revoke if clearly communicating with a third party. "Please remain silent."
+                </div>
+            </div>
+
+            <div class="policy-item critical">
+                <div class="policy-title"><span class="icon-badge">!</span>4. Suspicious Eyes</div>
+                <div class="policy-text">
+                    Recurring looks to lap/wall/wrists = <strong>Red Flag</strong>. Warn once. If it persists, pause exam and inspect the area.
+                </div>
+            </div>
+
+            <div class="policy-item">
+                <div class="policy-title"><span class="icon-badge">5</span>Unscheduled Breaks</div>
+                <div class="policy-text">
+                    Exam timer <strong>continues running</strong>. Candidate cannot access locker/bag. Must do full check-in upon return.
+                </div>
+            </div>
+
+        </div>
+
+        <div class="column">
+
+            <div class="policy-item">
+                <div class="policy-title"><span class="icon-badge">6</span>Comfort Aids</div>
+                <div class="policy-text">
+                    Tissues/Sweaters allowed but <strong>must be inspected</strong>. If brought in mid-exam, pause session to inspect immediately.
+                </div>
+            </div>
+
+            <div class="policy-item">
+                <div class="policy-title"><span class="icon-badge">7</span>Tech Freeze</div>
+                <div class="policy-text">
+                    Do not close exam. Attempt refresh/restart. If >10 mins, offer reschedule option and file case report.
+                </div>
+            </div>
+
+            <div class="policy-item critical">
+                <div class="policy-title"><span class="icon-badge">!</span>8. Note Taking</div>
+                <div class="policy-text">
+                    Use erasable board only. Writing on hands/tissues = <strong>Prohibited</strong>. Removing notes from room = <strong>Theft</strong>.
+                </div>
+            </div>
+
+            <div class="policy-item critical">
+                <div class="policy-title"><span class="icon-badge">!</span>9. Disruptive Behavior</div>
+                <div class="policy-text">
+                    Shouting/Aggression overrides exam security. <strong>Dismiss immediately</strong>. Call security if safety is compromised.
+                </div>
+            </div>
+
+            <div class="emergency-box">
+                <div class="emergency-title">10. Emergency Protocols (Fire/Safety)</div>
+                <div class="policy-text">
+                    <strong>Safety First.</strong> Instruct candidates to leave ALL items (IDs, Keys) at desk. Evacuate immediately. Seal room if safe. File "Site Emergency" report later.
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div style="text-align: center; font-size: 11px; color: #999; padding-top:10px;">
+        © Pearson VUE | Internal Use Only | Do Not Distribute to Candidates
+    </div>
+</div>
+
+</body>
+</html>
